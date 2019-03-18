@@ -13,13 +13,11 @@ int lcs3(int *a, int n,  int *b, int m, int *c, int l) {
 	//write your code here
 	int A[n+1][m+1][l+1]; 
   
-    for (int i=0; i<=n; i++) 
-    { 
-        for (int j=0; j<=m; j++) 
-        { 
-            for (int k=0; k<=l; k++) 
-            { 
-                if (i == 0 || j == 0||k==0) 
+    for (int i=0; i<=n; i++){ 
+        for (int j=0; j<=m; j++){ 
+            for (int k=0; k<=l; k++){ 
+                
+				if (i == 0 || j == 0||k==0) 
                     A[i][j][k] = 0; 
   
                 else if (a[i-1] == b[j-1] && a[i-1]==c[k-1]) 
