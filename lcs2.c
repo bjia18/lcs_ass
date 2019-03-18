@@ -27,6 +27,7 @@ int lcs2(int *a, int n,  int *b, int m) {
      		} 
    	} 
    	return A[n][m]; 
+	
 	//return 0;
 }
 
