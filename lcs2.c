@@ -15,17 +15,17 @@ int lcs2(int *a, int n,  int *b, int m) {
    	int i, j; 
    
    	for (i=0; i<=n; i++){ 
-     	for (j=0; j<=m; j++){ 
-       		if (i == 0 || j == 0) 
-         		A[i][j] = 0; 
+     		for (j=0; j<=m; j++){ 
+       			if (i == 0 || j == 0) 
+         			A[i][j] = 0; 
    
-       		else if (a[i-1] == b[j-1]) 
-         		A[i][j] = A[i-1][j-1] + 1; 
+       			else if (a[i-1] == b[j-1]) 
+         			A[i][j] = A[i-1][j-1] + 1; 
    
-       		else
-         		A[i][j] = max(A[i-1][j], A[i][j-1]); 
-     	} 
-   } 
+       			else
+         			A[i][j] = max(A[i-1][j], A[i][j-1]); 
+     		} 
+   	} 
    	return A[n][m]; 
 	//return 0;
 }
