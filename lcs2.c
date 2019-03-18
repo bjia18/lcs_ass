@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define max(x, y) (((x) > (y)) ? (x) : (y))
 
 void print_array(int *arr, int size){
 	for (int i=0; i<size; i++){
@@ -10,7 +11,23 @@ void print_array(int *arr, int size){
 
 int lcs2(int *a, int n,  int *b, int m) {
 	//write your code here
-	return 0;
+	int A[n+1][m+1]; 
+   	int i, j; 
+   
+   	for (i=0; i<=n; i++){ 
+     	for (j=0; j<=m; j++){ 
+       		if (i == 0 || j == 0) 
+         		A[i][j] = 0; 
+   
+       		else if (a[i-1] == b[j-1]) 
+         		A[i][j] = A[i-1][j-1] + 1; 
+   
+       		else
+         		A[i][j] = max(A[i-1][j], A[i][j-1]); 
+     	} 
+   } 
+   	return A[n][m]; 
+	//return 0;
 }
 
 int main() {
